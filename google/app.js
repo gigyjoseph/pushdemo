@@ -8,13 +8,16 @@ var config = {
     messagingSenderId: "558615890639"
 };
 
+
 firebase.initializeApp(config);
 
-const messaging = firebase.messaging();
-messaging.requestPermission()
-.then(function(){
-    return messaging.getToken(); 
+navigator.serviceworker.register('firebase-messaging-sw.js')
+.then((registration) => {
+    const messaging = firebase.messaging();
+    messaging.requestPermission(registration);
+    return messaging.getToken();
 })
+
 .then(function(token){
     document.getElementById('token').innerHTML= token;
 })
