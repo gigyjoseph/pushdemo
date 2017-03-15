@@ -20,6 +20,7 @@ messaging.requestPermission()
 })
 .catch(function(err){
     console.log("Error occured");
+    console.log(err.toString());
 })
 
 // will be called when the webpage is in the foreground
