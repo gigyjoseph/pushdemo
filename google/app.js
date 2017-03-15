@@ -11,7 +11,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-navigator.serviceworker.register('firebase-messaging-sw.js')
+navigator.serviceWorker.register('firebase-messaging-sw.js')
 .then((registration) => {
     const messaging = firebase.messaging();
     messaging.requestPermission(registration);
