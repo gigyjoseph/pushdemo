@@ -12,7 +12,7 @@ var config = {
 firebase.initializeApp(config);
 
 navigator.serviceWorker.register('firebase-messaging-sw.js')
-.then((registration) => {
+ .then((registration) => {
     const messaging = firebase.messaging();
     messaging.requestPermission(registration);
     return messaging.getToken();
