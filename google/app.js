@@ -28,6 +28,6 @@ navigator.serviceWorker.register('firebase-messaging-sw.js')
 
 // will be called when the webpage is in the foreground
 
-messaging.onMessage(function(payload){
-    console.log("onMessage",payload)
-})
+//messaging.onMessage(function(payload){
+//    console.log("onMessage",payload)
+//})
